@@ -22,13 +22,9 @@ export class ProductCreateDto {
     @IsNumber()
     price: number;
 
-    @IsNotEmpty()
-    @IsNumber()
-    priceWithDiscount: number;
-
     @IsOptional()
     @IsNumber()
-    discount: number;
+    discountPercentage: number;
 
     @IsOptional()
     @IsString()

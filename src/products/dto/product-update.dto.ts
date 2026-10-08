@@ -29,7 +29,7 @@ export class ProductUpdateDto {
 
     @IsOptional()
     @IsNumber()
-    discount: number;
+    discountPercentage: number;
 
     @IsOptional()
     @IsString()

@@ -7,7 +7,7 @@ export class ProductDto {
     quantity: number;
     price: number;
     priceWithDiscount: number;
-    discount: number;
+    discountPercentage: number;
     image: string;
     enterpriseId: Types.ObjectId;
     categoryId: Types.ObjectId;

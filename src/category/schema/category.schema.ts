@@ -1,7 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Types } from 'mongoose';
 
-
 @Schema()
 export class CategorySchema {
 
@@ -9,7 +8,7 @@ export class CategorySchema {
     name: string;
 
     @Prop({ type: Types.ObjectId, ref: 'Enterprise', required: true, index: true })
-    enterpriseId: string;
+    enterpriseId: Types.ObjectId;
 
 }
 

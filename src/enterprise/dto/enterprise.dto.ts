@@ -22,10 +22,4 @@ export class EnterpriseDto {
     @IsString()
     cnpj: string;
 
-    @IsNotEmpty()
-    createdAt: Date;
-
-    @IsNotEmpty()
-    updatedAt: Date;
-
 }

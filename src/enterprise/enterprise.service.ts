@@ -24,7 +24,13 @@ export class EnterprisesService {
     }
 
     async findEnterpriseById(id: string): Promise<EnterpriseDto> {
+
+        console.log("No service", id);
+
         const enterprise = await this.enterpriseModel.findById(id);
+
+        console.log("No service", enterprise);
+
         if (!enterprise) {
             throw new Error('Enterprise not found');
         }

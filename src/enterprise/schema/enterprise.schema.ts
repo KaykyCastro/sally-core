@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type EnterpriseDocument = HydratedDocument<EnterpriseSchema>;
 
-@Schema()
+@Schema({timestamps: true})
 export class EnterpriseSchema {
 
     @Prop({ required: true })
@@ -20,12 +20,6 @@ export class EnterpriseSchema {
 
     @Prop({ required: false })
     cnpj: string;
-
-    @Prop()
-    createdAt: Date;
-
-    @Prop()
-    updatedAt: Date;
 
 }
 

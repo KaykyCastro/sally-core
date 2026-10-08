@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { EnterprisesService } from './enterprise.service';
-import { EnterprisesController } from './enterprise.controller';
+import { EnterpriseController } from './enterprise.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EnterpriseSchemaFactory } from './schema/enterprise.schema';
 
@@ -8,7 +8,7 @@ import { EnterpriseSchemaFactory } from './schema/enterprise.schema';
   imports: [
     MongooseModule.forFeature([{ name: 'EnterpriseSchema', schema: EnterpriseSchemaFactory }])
   ],
-  controllers: [EnterprisesController],
+  controllers: [EnterpriseController],
   providers: [EnterprisesService],
 })
 export class EnterprisesModule {}

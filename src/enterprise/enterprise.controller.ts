@@ -5,8 +5,8 @@ import { EnterpriseCreateDto } from './dto/enterprise-create.dto';
 import { EnterpriseDto } from './dto/enterprise.dto';
 import { EnterpriseUpdateDto } from './dto/enterprise.update.dto';
 
-@Controller('enterprises')
-export class EnterprisesController {
+@Controller('enterprise')
+export class EnterpriseController {
   constructor(private readonly enterprisesService: EnterprisesService) {}
   
   @Post()
@@ -14,8 +14,9 @@ export class EnterprisesController {
     return this.enterprisesService.create(enterprise);
   }
 
-  @Get()
+  @Get(':id')
   async findById(@Param('id') id: string) {
+    console.log("No controller", id);
     return this.enterprisesService.findEnterpriseById(id);
   }
 

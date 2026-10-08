@@ -19,11 +19,11 @@ export class ProductSchema {
     @Prop({ required: true })
     price: number;
 
-    @Prop({ required: true })
+    @Prop({ required: false })
     priceWithDiscount: number;
 
     @Prop({ required: false })
-    discount: number;
+    discountPercentage: number;
 
     @Prop({ required: false })
     image: string;

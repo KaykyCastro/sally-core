@@ -9,11 +9,14 @@ import { ProductCreateDto } from './dto/product-create.dto';
 import { ProductUpdateDto } from './dto/product-update.dto';
 
 @Injectable()
-export class ProductsService {
+export class ProductService {
     constructor(@InjectModel(ProductSchema.name) private readonly productModel: Model<ProductSchema>) {}
 
 
     async create(product: ProductCreateDto): Promise<ProductDto | null> {
+
+        console.log("No service", product);
+
         const productExists = await this.productModel.findOne({ code: product.code });
         if (productExists) {
             throw new Error('Product already exists'); // TODO: criar exceção
@@ -46,6 +49,45 @@ export class ProductsService {
         if(!product) {
             throw new Error('Product not found'); // TODO: criar exceção
         }
+    }
+
+    async applyDiscount(id: string, discountPercentage: number) {
+        const product = await this.productModel.findById(id);
+        
+        if(!product) {
+            throw new Error('Product not found'); // TODO: criar exceção
+        }
+
+        const priceWithDiscount = product.price * (1 - discountPercentage / 100)
+
+        product.priceWithDiscount = priceWithDiscount;
+
+        return await product.save();
+
+    }
+
+    async decreaseQuantity(id: string, quantity: number) {
+        const product = await this.productModel.findById(id);
+        
+        if(!product) {
+            throw new Error('Product not found'); // TODO: criar exceção
+        }
+
+        product.quantity -= quantity;
+
+        return await product.save();
+    }
+
+    async increaseQuantity(id: string, quantity: number) {
+        const product = await this.productModel.findById(id);
+        
+        if(!product) {
+            throw new Error('Product not found'); // TODO: criar exceção
+        }
+
+        product.quantity += quantity;
+
+        return await product.save();
     }
     
 }
