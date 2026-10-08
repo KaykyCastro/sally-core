@@ -1,5 +1,5 @@
 import { Controller, Post, Get, Delete, Body, Param, Put } from '@nestjs/common';
-import { EnterprisesService } from './enterprises.service';
+import { EnterprisesService } from './enterprise.service';
 
 import { EnterpriseCreateDto } from './dto/enterprise-create.dto';
 import { EnterpriseDto } from './dto/enterprise.dto';

@@ -5,8 +5,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
 import { ConfigService } from '@nestjs/config';
 
-import { EnterprisesModule } from './enterprises/enterprises.module';
-import { ProductsModule } from './products/products.module';
+import { EnterprisesModule } from './enterprise/enterprise.module';
+import { ProductModule } from './products/product.module';
+import { CategorysModule } from './category/category.module';
 
 
 
@@ -24,7 +25,8 @@ import { ProductsModule } from './products/products.module';
       }
     }),
     EnterprisesModule,
-    ProductsModule,
+    ProductModule,
+    CategorysModule,
   ],
   controllers: [AppController],
   providers: [AppService],

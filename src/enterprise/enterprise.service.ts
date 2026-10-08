@@ -10,7 +10,7 @@ import { EnterpriseUpdateDto } from './dto/enterprise.update.dto';
 export class EnterprisesService {
     constructor(
         @InjectModel(EnterpriseSchema.name) private readonly enterpriseModel: Model<EnterpriseSchema>,
-    ) {}
+    ) {} 
 
     async create(enterprise : EnterpriseCreateDto): Promise<EnterpriseDto> {
         const enterpriseExist = await this.enterpriseModel.findOne({ email: enterprise.email });

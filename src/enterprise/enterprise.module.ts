@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { EnterprisesService } from './enterprises.service';
-import { EnterprisesController } from './enterprises.controller';
+import { EnterprisesService } from './enterprise.service';
+import { EnterprisesController } from './enterprise.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { EnterpriseSchemaFactory } from './schema/enterprise.schema';
 
