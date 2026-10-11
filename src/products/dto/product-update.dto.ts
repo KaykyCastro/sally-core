@@ -1,5 +1,4 @@
-import { IsNotEmpty, IsString, IsNumber, IsOptional } from 'class-validator';
-import { Types } from 'mongoose';
+import { IsNotEmpty, IsString, IsNumber, IsOptional, IsMongoId } from 'class-validator';
 
 export class ProductUpdateDto {
 
@@ -36,12 +35,12 @@ export class ProductUpdateDto {
     image: string;
 
     @IsNotEmpty()
-    @IsString()
-    enterpriseId: Types.ObjectId;
+    @IsMongoId()
+    enterpriseId: string;
 
     @IsNotEmpty()
-    @IsString()
-    categoryId: Types.ObjectId;
+    @IsMongoId()
+    categoryId: string;
 
     @IsNotEmpty()
     @IsString()

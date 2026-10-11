@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsString, IsMongoId } from 'class-validator';
 import { Types } from 'mongoose';
 
 export class CategoryCreateDto {
@@ -8,6 +8,7 @@ export class CategoryCreateDto {
     name: string;
 
     @IsNotEmpty()
+    @IsMongoId()
     enterpriseId: Types.ObjectId;
 
 }

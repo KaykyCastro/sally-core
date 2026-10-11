@@ -1,6 +1,7 @@
 import { Types } from 'mongoose';
 
 export class ProductDto {
+    _id: string;
     name: string;
     description: string;
     code: string;

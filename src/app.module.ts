@@ -8,6 +8,9 @@ import { ConfigService } from '@nestjs/config';
 import { EnterprisesModule } from './enterprise/enterprise.module';
 import { ProductModule } from './products/product.module';
 import { CategorysModule } from './category/category.module';
+import { DebitModule } from './debit/debit.module';
+import { CustomerModule } from './customer/customer.module';
+import { DebitItemModule } from './debit-item/debit-item.module';
 
 
 
@@ -27,6 +30,9 @@ import { CategorysModule } from './category/category.module';
     EnterprisesModule,
     ProductModule,
     CategorysModule,
+    DebitModule,
+    CustomerModule,
+    DebitItemModule,
   ],
   controllers: [AppController],
   providers: [AppService],
